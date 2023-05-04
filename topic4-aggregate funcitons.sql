@@ -48,3 +48,12 @@ from films
 -- Calculate the title and duration_hours from films
 SELECT title, (duration/60) as duration_hours
 FROM films;
+
+
+-- Calculate the percentage of people who are no longer alive
+SELECT count(deathdate) * 100.0 / count(name) AS percentage_dead
+FROM people;
+
+-- Find the number of decades in the films table
+SELECT (max(release_year) - min(release_year)) / 10.0 AS number_of_decades
+FROM films;
